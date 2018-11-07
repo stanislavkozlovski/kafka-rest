@@ -382,7 +382,7 @@ public class KafkaConsumerManager {
     @Override
     public long getDelay(TimeUnit unit) {
       long delayMs = waitExpirationMs - config.getTime().milliseconds();
-      return TimeUnit.MILLISECONDS.convert(delayMs, unit);
+      return unit.convert(delayMs, TimeUnit.MILLISECONDS);
     }
 
     @Override
